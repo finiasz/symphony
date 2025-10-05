@@ -39,5 +39,20 @@
             android:name=".services.radio.RadioNotificationService"
             android:foregroundServiceType="mediaPlayback"
             android:stopWithTask="true" />
+
+        <service android:name=".services.auto.MediaBrowserService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService"/>
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.gms.car.application"
+            android:resource="@xml/automotive_app_desc"/>
+
+        <meta-data
+            android:name="androidx.car.app.TintableAttributionIcon"
+            android:resource="@drawable/ic_launcher_foreground" />
     </application>
 </manifest>
